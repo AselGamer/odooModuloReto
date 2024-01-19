@@ -7,6 +7,8 @@
     'website' : '',
     'description' : '''Módulo para hacer juegos''',
     'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
         'views/menu.xml',
         'views/arma_views.xml'
     ],
