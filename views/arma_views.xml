@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_arma_form" model="ir.ui.view">
+        <field name="name">Vista formulario de arma</field>
+        <field name="model">arma</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <div class="o_row"> <!--Cada fila-->
+                            <h1 style="display:flex;">
+                                <field name="name" placeholder="Nombre del arma" required="1" default_focus="1"/>   <!--Cada variable-->
+                            </h1>
+                        </div>
+                        <group string="Datos principales" style="margin-top: -10px">
+                            <group>
+                                <field name="descripcion"/>
+                                <field name="danyo"/>
+                                <!--<field name="marca_id" domain="[('category_id', 'in', [categoria_marca_id])]"
+                                        options="{'no_create':True, 'no_open':True}"/>-->
+                                <!--<field name="nombre_proveedor"/>-->
+                                <field name="velocidad"/>
+                            </group>
+                            <group>
+                                <!--<field name="categoria_marca_id" invisible="1"/>-->
+                                <field name="imagen" widget="image"/>
+                                <field name="precio" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                <field name="currency_id" invisible="1"/>   <!-- La opcion de que nos deje elegir la divisa -->
+                            </group>
+                        </group>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_arma_kanban" model="ir.ui.view">
+        <field name="name">Vista de kanban</field>
+        <field name="model">arma</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="currency_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <!--<img t-att-src="kanban_image('ropa', 'image_128', record.id.raw_value)" class="o_image_64_contain"/>-->
+                                <field name="imagen" widget="image"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </strong>
+                                [<field name="danyo"/>]
+                                <div>
+                                    <field name="velocidad"/>
+                                </div>
+                                <div>
+                                    <field name="precio" widget="monetary" options="{'currency_field': 'currency_id', 'field:digits': True}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="action_open_arma" model="ir.actions.act_window">
+        <field name="name">Arma</field>
+        <field name="res_model">arma</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <menuitem id="menu_principal" name="Juegos" />
+    <menuitem id="menu_horizontal" name="Equipamentos" parent="menu_principal" />
+    <menuitem id="menu_vertical_arma" name="Arma" parent="menu_horizontal" action="action_open_arma" />
+
+</odoo>
