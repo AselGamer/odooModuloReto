@@ -10,6 +10,8 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/menu.xml',
-        'views/arma_views.xml'
+        'views/arma_views.xml',
+        'views/armadura_views.xml',
+        'views/medicamento_views.xml',
     ],
 }

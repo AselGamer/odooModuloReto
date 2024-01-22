@@ -7,15 +7,13 @@ from odoo.exceptions import UserError
 logger = logging.getLogger(__name__)
 
 
-# Cuando le damos a Crear
-class Arma(models.Model):
-    _name = 'arma'
+class Armadura(models.Model):
+    _name = 'armadura'
     _inherit = ['image.mixin']
 
     name = fields.Char(string='Nombre')
     descripcion = fields.Text(string='Descripción')
-    danyo = fields.Integer(string='Daño')
-    velocidad = fields.Integer(string='Velocidad de disparo')
+    defensa = fields.Integer(string='Defensa')
     precio = fields.Monetary(string='Precio')
     currency_id = fields.Many2one(
         comodel_name="res.currency", string='Moneda',

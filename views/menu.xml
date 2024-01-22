@@ -3,11 +3,25 @@
     <record id="action_open_arma" model="ir.actions.act_window">
         <field name="name">Arma</field>
         <field name="res_model">arma</field>
-        <field name="view_mode">kanban,form</field>
+        <field name="view_mode">kanban,form,tree</field>
     </record>
 
-    <menuitem id="menu_principal" name="Juegos" />
-    <menuitem id="menu_horizontal" name="Equipamentos" parent="menu_principal" />
-    <menuitem id="menu_vertical_arma" name="Arma" parent="menu_horizontal" action="action_open_arma" />
+    <record id="action_open_armadura" model="ir.actions.act_window">
+        <field name="name">Armadura</field>
+        <field name="res_model">armadura</field>
+        <field name="view_mode">kanban,form,tree</field>
+    </record>
+
+    <record id="action_open_medicamento" model="ir.actions.act_window">
+        <field name="name">Medicamento</field>
+        <field name="res_model">medicamento</field>
+        <field name="view_mode">kanban,form,tree</field>
+    </record>
+
+
+    <menuitem id="menu_principal" name="Juegos"/>
+    <menuitem id="menu_horizontal_arma" name="Arma" parent="menu_principal" action="action_open_arma"/>
+    <menuitem id="menu_horizontal_armadura" name="Armadura" parent="menu_principal" action="action_open_armadura"/>
+    <menuitem id="menu_horizontal_medicamento" name="Medicamento" parent="menu_principal" action="action_open_medicamento"/>
 
 </odoo>

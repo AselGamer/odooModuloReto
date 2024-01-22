@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="view_arma_form" model="ir.ui.view">
-        <field name="name">Vista formulario de arma</field>
-        <field name="model">arma</field>
+    <record id="view_armadura_form" model="ir.ui.view">
+        <field name="name">Vista formulario de armadura</field>
+        <field name="model">armadura</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -12,13 +12,13 @@
                             <field name="priority" widget="priority"/>
                             </h2>
                             <h1>
-                                <field name="name" placeholder="Nombre del arma" required="1" default_focus="1"/>
+                                <field name="name" placeholder="Nombre del medicamento" required="1" default_focus="1"/>
                             </h1>
                         </div>
                         <group string="Datos principales" style="margin-top: -10px">
                             <group>
                                 <field name="descripcion"/>
-                                <field name="danyo"/>
+                                <field name="defensa"/>
                                 <field name="precio" widget="monetary" options="{'currency_field':'currency_id'}"/>
                                 <field name="currency_id" invisible="1"/>
                             </group>
@@ -32,9 +32,9 @@
         </field>
     </record>
 
-    <record id="view_arma_kanban" model="ir.ui.view">
-        <field name="name">Vista de kanban arma</field>
-        <field name="model">arm</field>
+    <record id="view_armadura_kanban" model="ir.ui.view">
+        <field name="name">Vista de kanban armadura</field>
+        <field name="model">armadura</field>
         <field name="arch" type="xml">
             <kanban>
                 <field name="id"/>
@@ -50,7 +50,7 @@
                                     <field name="name"/>
                                 </strong>
                                 <div>
-                                    <field name="danyo"/>
+                                    <field name="defensa"/>
                                 </div>
                                 <div>
                                     <field name="precio" widget="monetary" options="{'currency_field': 'currency_id', 'field:digits': True}"/>
@@ -67,15 +67,15 @@
         </field>
     </record>
 
-    <record id="view_arma_tree" model="ir.ui.view">
-        <field name="name">Vista de lista de armas</field>
-        <field name="model">arma</field>
+    <record id="view_armadura_tree" model="ir.ui.view">
+        <field name="name">Vista de lista de armaduras</field>
+        <field name="model">armadura</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="imagen" widget="image" options="{'size':[50,50]}" optional="show"/>
                 <field name="name"/>
                 <field name="descripcion"/>
-                <field name="danyo"/>
+                <field name="defensa"/>
                 <field name="precio" widget="monetary" options="{'currency_field':'currency_id'}"/>
                 <field name="currency_id" invisible="1"/>
                 <field name="priority" widget="priority"/>

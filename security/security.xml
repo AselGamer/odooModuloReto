@@ -8,29 +8,30 @@
     </record>
 
     <!-- Categoría hijo -->
-    <record id="module_category_juego_arma" model="ir.module.category">
-        <field name="name">Arma</field>
-        <field name="description">Modulo de arma</field>
+    <record id="module_category_juego_equipamiento" model="ir.module.category">
+        <field name="name">Equipamiento</field>
+        <field name="description">Modulo de equipamiento</field>
         <field name="sequence">1</field>
         <field name="parent_id" ref="module_category_juego"/>
     </record>
 
+
     <!--Grupos-->   <!-- Cuando le das a Editar, el desplegable que sale al clickar en la Categoria hijo -->
     <record id="group_juego_usuario" model="res.groups">
-        <field name="name">Usuario: solo puede ver las armas que ha comprado</field>
-        <field name="category_id" ref="module_category_juego_arma"/>
+        <field name="name">Usuario: solo puede ver el equipamiento que ha comprado</field>
+        <field name="category_id" ref="module_category_juego_equipamiento"/>
     </record>
 
     <record id="group_juego_administrador" model="res.groups">
         <field name="name">Administrador: puede ver todo</field>
-        <field name="category_id" ref="module_category_juego_arma"/>
+        <field name="category_id" ref="module_category_juego_equipamiento"/>
         <field name="implied_ids" eval="[(4, ref('group_juego_usuario'))]" />
     </record>
 
     <!-- Reglas -->
     <!--Usuario-->
     <record id="juego_arma_comprada_rule" model="ir.rule">
-        <field name="name">Compras de arma realizadas</field>
+        <field name="name">Compras de equipamiento realizadas</field>
         <field name="model_id" ref="model_arma"/>   <!-- model_ del .csv -->
         <field name="domain_force">[('create_uid', '=', user.id)]</field>   <!-- Si el usuario esta creado -->
         <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
@@ -38,7 +39,7 @@
 
     <!--Administrador-->
     <record id="juego_arma_todas_rule" model="ir.rule">
-        <field name="name">Compras de arma realizadas</field>
+        <field name="name">Compras de equipamiento realizadas</field>
         <field name="model_id" ref="model_arma"/>   <!-- model_ del .csv -->
         <field name="domain_force">[(1, '=', 1)]</field>    <!-- Siempre se cumple -->
         <field name="groups" eval="[(4,ref('group_juego_administrador'))]" />   <!-- group del .csv -->
