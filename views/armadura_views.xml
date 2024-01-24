@@ -22,9 +22,9 @@
                                 <field name="precio" widget="monetary" options="{'currency_field':'currency_id'}"/>
                                 <field name="currency_id" invisible="1"/>
                             </group>
-                            <group>
-                                <field name="imagen" widget="image"/>
-                            </group>
+                        </group>
+                        <group>
+                            <field name="imagen" widget="image" options="{'size':[300, 300]}"/>
                         </group>
                     </div>
                 </sheet>
@@ -43,11 +43,11 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click" style="display: flex; flex-direction: row;">
                             <div class="o_kanban_image">
-                                <field name="imagen" widget="image" class="o_image_64_contain"/>
+                                <field name="imagen" widget="image" options="{'size':[100,100]}"/>
                             </div>
                             <div class="oe_kanban_details">
-                                <strong class="o_kanban_record_title">
-                                    <field name="name"/>
+                                <strong class="o_kanban_record_title" >
+                                    <field name="name" decoration-bf="1"/>
                                 </strong>
                                 <div>
                                     <field name="defensa"/>
@@ -71,7 +71,7 @@
         <field name="name">Vista de lista de armaduras</field>
         <field name="model">armadura</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="bottom" multi_edit="1">
                 <field name="imagen" widget="image" options="{'size':[50,50]}" optional="show"/>
                 <field name="name"/>
                 <field name="descripcion"/>
