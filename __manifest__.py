@@ -13,5 +13,7 @@
         'views/arma_views.xml',
         'views/armadura_views.xml',
         'views/medicamento_views.xml',
+        'views/usuario_views.xml',
+        'views/venta_views.xml',
     ],
 }

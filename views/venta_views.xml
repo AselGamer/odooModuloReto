@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_venta_form" model="ir.ui.view">
+        <field name="name">Vista formulario de venta</field>
+        <field name="model">venta</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <div class="oe_title">
+
+                        <group>
+                            <field name="usuario_id"/>
+                            <field name="fecha"/>
+                            <field name="tipo"/>
+                            <field name="arma_id" attrs="{'invisible': [('tipo', '!=', 'arma')]}"/>
+                            <field name="armadura_id" attrs="{'invisible': [('tipo', '!=', 'armadura')]}"/>
+                            <field name="medicamento_id" attrs="{'invisible': [('tipo', '!=', 'medicamento')]}"/>
+                            <field name="total" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_venta_tree" model="ir.ui.view">
+        <field name="name">Vista de lista de ventas</field>
+        <field name="model">venta</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="usuario_id"/>
+                <field name="fecha"/>
+                <field name="tipo"/>
+                <field name="arma_id"/>
+                <field name="armadura_id"/>
+                <field name="medicamento_id"/>
+                <field name="total" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_venta_pivot" model="ir.ui.view">
+        <field name="name">Vista de pivot de ventas</field>
+        <field name="model">venta</field>
+        <field name="arch" type="xml">
+            <pivot string="Ventas" disable_linking="1">
+                <field name="usuario_id" type="row"/>
+                <field name="fecha" type="col"/>
+                <field name="total" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                <field name="currency_id" invisible="1"/>
+            </pivot>
+        </field>
+
+    </record>
+
+</odoo>
