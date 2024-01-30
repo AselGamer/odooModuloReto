@@ -15,6 +15,7 @@ class Usuario(models.Model):
     email = fields.Char(string='Email')
     apellido = fields.Char(string='Apellido')
     dinero = fields.Integer(string='Dinero')
+    foto_perfil = fields.Binary(string='Foto de perfil')
     currency_id = fields.Many2one(
         comodel_name='res.currency',
         string='Moneda',

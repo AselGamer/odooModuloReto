@@ -8,14 +8,16 @@
                 <sheet>
 
                     <div class="oe_title">
-
                         <group>
-                            <field name="name"/>
-                            <field name="apellido"/>
-                            <field name="email"/>
-                            <field name="dinero" widget="monetary" options="{'currency_field':'currency_id'}"/>
-                            <field name="currency_id" invisible="1"/>
+                            <group>
+                                <field name="name"/>
+                                <field name="apellido"/>
+                                <field name="email"/>
+                                <field name="dinero" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
                         </group>
+
 
                     </div>
                 </sheet>
