@@ -26,7 +26,7 @@
 
     <record id="action_open_usuario" model="ir.actions.act_window">
         <field name="name">Usuario</field>
-        <field name="res_model">usuario</field>
+        <field name="res_model">res.users</field>
         <field name="view_mode">tree,form</field>
     </record>
 

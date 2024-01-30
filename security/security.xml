@@ -9,7 +9,7 @@
 
     <!-- Categoría hijo -->
     <record id="module_category_juego_equipamiento" model="ir.module.category">
-        <field name="name">Equipamiento</field>
+        <field name="name">Tipo Usuario</field>
         <field name="description">Modulo de equipamiento</field>
         <field name="sequence">1</field>
         <field name="parent_id" ref="module_category_juego"/>
@@ -18,7 +18,7 @@
 
     <!--Grupos-->   <!-- Cuando le das a Editar, el desplegable que sale al clickar en la Categoria hijo -->
     <record id="group_juego_usuario" model="res.groups">
-        <field name="name">Usuario: solo puede ver el equipamiento que ha comprado</field>
+        <field name="name">Usuario: solo puede ver el equipamiento</field>
         <field name="category_id" ref="module_category_juego_equipamiento"/>
     </record>
 

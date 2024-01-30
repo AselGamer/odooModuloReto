@@ -11,7 +11,8 @@ class Venta(models.Model):
     _name = 'venta'
     _inherit = ['image.mixin']
 
-    usuario_id = fields.Many2one(comodel_name='usuario', string='Usuario')
+    usuario_id = fields.Many2one(comodel_name='res.users', string='Usuario')
+
     tipo = fields.Selection(
         selection=[('arma', 'Arma'),
                    ('armadura', 'Armadura'),
@@ -46,11 +47,11 @@ class Venta(models.Model):
             record.total_articulo = record.total_arma + record.total_armadura + record.total_medicamento
 
     def realizar_compra(self):
-        dinero_disponible = self.usuario_id.dinero
+        dinero_disponible = self.usuario_id.x_dinero
         total_articulo = self.total_articulo
         if(dinero_disponible < total_articulo):
             raise UserError('No tienes dinero suficiente')
         else:
-            self.usuario_id.dinero = dinero_disponible - total_articulo
+            self.usuario_id.x_dinero = dinero_disponible - total_articulo
             self.state = 'comprado'
             self.fch_compra = fields.Datetime.now()
