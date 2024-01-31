@@ -30,7 +30,8 @@
             <tree>
                 <field name="name"/>
                 <field name="login"/>
-                
+                <field name="x_dinero"/>
+                <field name="sel_groups_71_72"/>
 
             </tree>
         </field>
