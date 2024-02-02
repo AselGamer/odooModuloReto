@@ -68,7 +68,6 @@
                                 <field name="priority" widget="priority"/>
                             </div>
 
-
                         </div>
                     </t>
                 </templates>
