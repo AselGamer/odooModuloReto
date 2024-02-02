@@ -31,16 +31,58 @@
     <!-- Reglas -->
     <!--Usuario-->
     <record id="juego_arma_comprada_rule" model="ir.rule">
-        <field name="name">Compras de equipamiento realizadas</field>
-        <field name="model_id" ref="model_arma"/>   <!-- model_ del .csv -->
+        <field name="name">Armas compradas</field>
+        <field name="model_id" ref="model_venta"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>   <!-- Si el usuario esta creado -->
+        <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
+    </record>
+
+     <record id="juego_armadura_comprada_rule" model="ir.rule">
+        <field name="name">Armaduras compradas</field>
+        <field name="model_id" ref="model_armadura"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>   <!-- Si el usuario esta creado -->
+        <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
+    </record>
+
+     <record id="juego_medicamento_comprado_rule" model="ir.rule">
+        <field name="name">Medicamentos comprados</field>
+        <field name="model_id" ref="model_medicamento"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>   <!-- Si el usuario esta creado -->
+        <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
+    </record>
+
+    <record id="juego_venta_rule" model="ir.rule">
+        <field name="name">Ventas</field>
+        <field name="model_id" ref="model_venta"/>   <!-- model_ del .csv -->
         <field name="domain_force">[('create_uid', '=', user.id)]</field>   <!-- Si el usuario esta creado -->
         <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
     </record>
 
     <!--Administrador-->
     <record id="juego_arma_todas_rule" model="ir.rule">
-        <field name="name">Compras de equipamiento realizadas</field>
+        <field name="name">Armas</field>
         <field name="model_id" ref="model_arma"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[(1, '=', 1)]</field>    <!-- Siempre se cumple -->
+        <field name="groups" eval="[(4,ref('group_juego_administrador'))]" />   <!-- group del .csv -->
+    </record>
+
+    <record id="juego_armadura_todas_rule" model="ir.rule">
+        <field name="name">Armaduras</field>
+        <field name="model_id" ref="model_armadura"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[(1, '=', 1)]</field>    <!-- Siempre se cumple -->
+        <field name="groups" eval="[(4,ref('group_juego_administrador'))]" />   <!-- group del .csv -->
+    </record>
+
+    <record id="juego_medicamento_todas_rule" model="ir.rule">
+        <field name="name">Medicamentos</field>
+        <field name="model_id" ref="model_medicamento"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[(1, '=', 1)]</field>    <!-- Siempre se cumple -->
+        <field name="groups" eval="[(4,ref('group_juego_administrador'))]" />   <!-- group del .csv -->
+    </record>
+
+    <record id="juego_ventas_rule" model="ir.rule">
+        <field name="name">Ventas</field>
+        <field name="model_id" ref="model_venta"/>   <!-- model_ del .csv -->
         <field name="domain_force">[(1, '=', 1)]</field>    <!-- Siempre se cumple -->
         <field name="groups" eval="[(4,ref('group_juego_administrador'))]" />   <!-- group del .csv -->
     </record>

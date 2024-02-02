@@ -26,3 +26,8 @@ class Medicamento(models.Model):
         ('0', 'Nulo'),
         ('1', 'Favorito')
     ], string='Favorito', default='0')
+
+    state = fields.Selection([
+        ('comprado', 'Comprado'),
+        ('no_comprado', 'No comprado')
+    ], string='Estado', default='no_comprado')
