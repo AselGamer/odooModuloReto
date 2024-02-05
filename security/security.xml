@@ -51,6 +51,13 @@
         <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
     </record>
 
+    <record id="juego_usuario_rule" model="ir.rule">
+        <field name="name">Usuarios</field>
+        <field name="model_id" ref="base.model_res_users"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[(1, '=', 1)]</field>   <!-- Si el usuario esta creado -->
+        <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
+    </record>
+
     <record id="juego_venta_rule" model="ir.rule">
         <field name="name">Ventas</field>
         <field name="model_id" ref="model_venta"/>   <!-- model_ del .csv -->
@@ -78,6 +85,13 @@
         <field name="model_id" ref="model_medicamento"/>   <!-- model_ del .csv -->
         <field name="domain_force">[(1, '=', 1)]</field>    <!-- Siempre se cumple -->
         <field name="groups" eval="[(4,ref('group_juego_administrador'))]" />   <!-- group del .csv -->
+    </record>
+
+    <record id="juego_usuario_todas_rule" model="ir.rule">
+        <field name="name">Usuarios</field>
+        <field name="model_id" ref="base.model_res_users"/>   <!-- model_ del .csv -->
+        <field name="domain_force">[(1, '=', 1)]</field>   <!-- Si el usuario esta creado -->
+        <field name="groups" eval="[(4,ref('group_juego_usuario'))]"/>   <!-- group del .csv -->
     </record>
 
     <record id="juego_ventas_rule" model="ir.rule">

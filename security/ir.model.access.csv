@@ -4,12 +4,14 @@ acceso_arma_usuario,acceso arma usuario,model_arma,group_juego_usuario,1,1,0,0
 acceso_armadura_usuario,acceso armadura usuario,model_armadura,group_juego_usuario,1,1,0,0
 acceso_medicamento_usuario,acceso medicamento usuario,model_medicamento,group_juego_usuario,1,1,0,0
 acceso_venta_usuario,acceso venta usuario,model_venta,group_juego_usuario,1,1,1,0
+acceso_usuario_usuario,acceso usuario usuario,base.model_res_users,group_juego_usuario,1,1,1,0
 
 
 acceso_arma_administrador,acceso arma administrador,model_arma,group_juego_administrador,1,1,1,1
 acceso_armadura_administrador,acceso armadura administrador,model_armadura,group_juego_administrador,1,1,1,1
 acceso_medicamento_administrador,acceso medicamento administrador,model_medicamento,group_juego_administrador,1,1,1,1
 acceso_venta_administrador,acceso venta administrador,model_venta,group_juego_administrador,1,1,1,1
+acceso_usuario_administrador,acceso usuario administrador,base.model_res_users,group_juego_administrador,1,1,1,1
 
 
 
