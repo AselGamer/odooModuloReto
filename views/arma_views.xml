@@ -12,9 +12,7 @@
                                 <field name="name" placeholder="Nombre del arma" required="1" default_focus="1"/>
                             </h1>
                             <div style="display: flex; flex-direction: row; align-items: center;">
-                                <h2 style="margin-right:30px;">
-                                    <field name="state" widget="badge" decoration-success="state == 'comprado'"/>
-                                </h2>
+
                                 <h2>
                                     <field name="priority" widget="priority"/>
                                 </h2>
@@ -64,9 +62,7 @@
                                 <div>
                                     <p>Precio: <field name="precio" widget="monetary" options="{'currency_field': 'currency_id', 'field:digits': True}"/></p>
                                 </div>
-                                <div>
-                                    <field name="state" widget="badge" decoration-success="state == 'comprado'"/>
-                                </div>
+
                             </div>
                             <div>
                                 <field name="priority" widget="priority"/>
@@ -91,7 +87,6 @@
                 <field name="danyo"/>
                 <field name="precio" widget="monetary" options="{'currency_field':'currency_id'}"/>
                 <field name="currency_id" invisible="1"/>
-                <field name="state" widget="badge" decoration-success="state == 'comprado'"/>
             </tree>
         </field>
     </record>

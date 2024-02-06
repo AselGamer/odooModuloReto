@@ -29,10 +29,7 @@ class Arma(models.Model):
         ('1', 'Favorito')
     ], string='Prioridad', default='0')
 
-    state = fields.Selection([
-        ('comprado', 'Comprado'),
-        ('no_comprado', 'No comprado')
-    ], string='Estado', default='no_comprado')
+
 
 
     usuario_id = fields.Many2one(comodel_name='res.users', string='Usuario')

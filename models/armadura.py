@@ -27,7 +27,3 @@ class Armadura(models.Model):
         ('1', 'Favorito')
     ], string='Prioridad', default='0')
 
-    state = fields.Selection([
-        ('comprado', 'Comprado'),
-        ('no_comprado', 'No comprado')
-    ], string='Estado', default='no_comprado')
