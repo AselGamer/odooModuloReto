@@ -37,15 +37,5 @@ class Arma(models.Model):
 
     usuario_id = fields.Many2one(comodel_name='res.users', string='Usuario')
 
-    @api.onchange('usuario_id','state','precio')
-    def comprar(self):
-        dinero_disponible = self.usuario_id.x_dinero
-        precio = self.precio
-        raise UserError('Usuario login: ' +str(self.usuario_id.login) +'Dinero disponible: ' + str(dinero_disponible) + ' Precio: ' + str(precio))
-        if (dinero_disponible < precio):
-            raise UserError('No tienes dinero suficiente')
-        else:
-            self.usuario_id.x_dinero = dinero_disponible - precio
-            self.state = 'comprado'
 
 
